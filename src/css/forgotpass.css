@@ -13,6 +13,8 @@
 .forgotlogo {
   width: 184px;
   height: 118px;
+  margin-top: 83px;
+  margin-bottom: 63px;
 }
 
 .recoverpass {
@@ -59,5 +61,5 @@
   text-transform: uppercase;
   color: #ffffff;
   margin-top: 32px;
-  margin-bottom: 145px;
+  margin-bottom: 351px;
 }

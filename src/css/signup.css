@@ -22,6 +22,7 @@
 .signuplogo {
   width: 184px;
   height: 118px;
+  margin-top: 83px;
 }
 
 .signtitle {
@@ -34,6 +35,7 @@
   line-height: 37px;
   text-align: center;
   color: #02b589;
+  margin-top: 63px;
 }
 
 .repeatpasssection {
@@ -72,5 +74,5 @@
   text-transform: uppercase;
   color: #ffffff;
   margin-top: 32px;
-  margin-bottom: 50px;
+  margin-bottom: 241px;
 }

@@ -19,8 +19,11 @@ export const Home = () => {
             type="text"
             placeholder="https://www.web-huudas.mn"
             className="input"
+            required
           ></input>
-          <div className="shorten cursor">Богиносгох</div>
+          <button id="shorten" type="button" className="shorten cursor">
+            Богиносгох
+          </button>
         </div>
       </div>
       <Footer />
