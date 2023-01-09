@@ -1,0 +1,32 @@
+.footer {
+  width: 100vw;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottext {
+  width: 225px;
+  height: 18px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.copyright {
+  width: 131px;
+  height: 18px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.2;
+}
