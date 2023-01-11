@@ -36,7 +36,7 @@ export const SignUp = () => {
           <input
             placeholder="name@mail.domain"
             className="inputbox"
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           ></input>
@@ -46,7 +46,7 @@ export const SignUp = () => {
           <input
             placeholder="••••••••••"
             className="inputbox"
-            type="text"
+            type="password"
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
           ></input>
