@@ -1,8 +1,10 @@
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+dotenv.config();
 
-const connectionString = `mongodb+srv://BilguunSD:CounterSpell3000@cluster0.x3dqhwq.mongodb.net/hop2c`;
+const connectionString = process.env.MONGODB_URI;
 
-exports.connectDatabse = async () => {
+exports.connectDatabase = async () => {
   try {
     await mongoose.connect(connectionString);
     console.log("Successfully Connected");

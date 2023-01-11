@@ -1,7 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const UserRouter = require("./router/userRouter");
-const { connectDatabse } = require("./database/databse");
+const { connectDatabase } = require("./database/database");
 
 const port = 8000;
 
@@ -10,7 +9,7 @@ app.use(express.json());
 app.use(UserRouter);
 
 const startServer = async () => {
-  await connectDatabse();
+  await connectDatabase();
   app.listen(port, () => {
     console.log(`server is running at localhost:${port}`);
   });

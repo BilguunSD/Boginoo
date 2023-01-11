@@ -75,4 +75,11 @@
   color: #ffffff;
   margin-top: 32px;
   margin-bottom: 241px;
+  border: none;
+}
+
+.registerbutton:hover {
+  background: #ffffff;
+  color: #02b589;
+  border: #000000 solid 0.7px;
 }
