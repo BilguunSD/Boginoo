@@ -3,8 +3,14 @@ import logo from "../assets/logofr2.png";
 import { Link } from "react-router-dom";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
+import { useState, useEffect } from "react";
 
 export const Login = () => {
+  const [logEmail, setLogEmail] = useState("");
+  const [logPassword, setLogPassword] = useState("");
+
+  // const Users = await;
+
   return (
     <div className="logincon">
       <Header />
@@ -13,11 +19,23 @@ export const Login = () => {
         <div className="jointitle">Нэвтрэх</div>
         <div className="emailsection">
           <div className="emailtext">Цахим хаяг</div>
-          <input placeholder="name@mail.domain" className="inputbox"></input>
+          <input
+            placeholder="name@mail.domain"
+            className="inputbox"
+            type="mail"
+            value={logEmail}
+            onChange={(e) => setLogEmail(e.currentTarget.value)}
+          ></input>
         </div>
         <div className="passwordsection">
           <div className="passtext">Нууц үг</div>
-          <input placeholder="••••••••••" className="inputbox"></input>
+          <input
+            placeholder="••••••••••"
+            className="inputbox"
+            type="password"
+            value={logPassword}
+            onChange={(e) => setLogPassword(e.currentTarget.value)}
+          ></input>
         </div>
         <div className="ticksection">
           <div className="checkcheck">

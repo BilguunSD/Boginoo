@@ -5,22 +5,28 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailValue, setEmail] = useState("");
+  const [passwordValue, setPassword] = useState("");
+  const [repeatedpassword, setRepeatPassword] = useState("");
 
-  const addAccount = () => {
-    const user = { email: email, password: password };
-    console.log(user);
+  const fetchUser = async () => {
+    try {
+      if (repeatedpassword === passwordValue) {
+        await axios.post(`http://localhost:8000/user`, {
+          email: emailValue,
+          password: passwordValue,
+        });
+        alert("Success");
+      } else {
+        console.log("Password doesn't match");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
-    const users = async () => {
-      const result = await axios({
-        url: "http://localhost:3000/user",
-        method: "POST",
-        headers: { uid: "" },
-      });
-    };
+    fetchUser();
   });
 
   return (
@@ -36,8 +42,8 @@ export const SignUp = () => {
           <input
             placeholder="name@mail.domain"
             className="inputbox"
-            type="email"
-            value={email}
+            type="mail"
+            value={emailValue}
             onChange={(e) => setEmail(e.currentTarget.value)}
           ></input>
         </div>
@@ -47,15 +53,21 @@ export const SignUp = () => {
             placeholder="••••••••••"
             className="inputbox"
             type="password"
-            value={password}
+            value={passwordValue}
             onChange={(e) => setPassword(e.currentTarget.value)}
           ></input>
         </div>
         <div className="repeatpasssection">
           <div className="repeatpass">Нууц үгээ давтна уу?</div>
-          <input placeholder="••••••••••" className="inputbox"></input>
+          <input
+            placeholder="••••••••••"
+            className="inputbox"
+            type="password"
+            value={repeatedpassword}
+            onChange={(e) => setRepeatPassword(e.currentTarget.value)}
+          ></input>
         </div>
-        <button className="registerbutton cursor" onClick={addAccount}>
+        <button className="registerbutton cursor" onClick={fetchUser}>
           Бүртгүүлэх
         </button>
         <Footer />
