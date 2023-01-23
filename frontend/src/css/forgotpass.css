@@ -1,0 +1,72 @@
+.forgotpasscon {
+  width: 100vw;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+.forgotbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forgotlogo {
+  width: 184px;
+  height: 118px;
+  margin-top: 83px;
+  margin-bottom: 63px;
+}
+
+.recoverpass {
+  width: 244px;
+  height: 37px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  text-align: center;
+  color: #02b589;
+  margin-bottom: 24px;
+}
+
+.willsent {
+  width: 290px;
+  height: 50px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.sent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 381px;
+  height: 43px;
+  background: #02b589;
+  border-radius: 100px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 32px;
+  margin-bottom: 351px;
+  border: none;
+}
+
+.sent:hover {
+  background: #ffffff;
+  color: #02b589;
+  border: #000000 solid 0.7px;
+}
