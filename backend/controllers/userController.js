@@ -6,7 +6,7 @@ const {
   userDeleteQuery,
   userReadByEmail,
 } = require("../query/userQuery");
-const UserSchema = require("../database/model/User");
+const UserSchema = require("../database/model/user");
 const { TokenGenerator } = require("../helper/helper");
 const bcrypt = require("bcrypt");
 

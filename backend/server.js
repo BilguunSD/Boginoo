@@ -3,10 +3,13 @@ const UserRouter = require("./routers/userRouter");
 const UrlRouter = require("./routers/urlRouter");
 const { connectDatabase } = require("./database/database");
 const cors = require("cors");
-const PORT = process.env.PORT || 4000;
-const app = express();
 const dotenv = require("dotenv");
+
+const PORT = process.env.PORT || 3000;
+const app = express();
 dotenv.config();
+
+console.log(ErrorSs);
 
 app.use(cors());
 app.use(express.json());
