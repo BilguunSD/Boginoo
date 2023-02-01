@@ -1,6 +1,6 @@
 const {
+  getUserQuery,
   userCreateQuery,
-  allUser,
   userReadById,
   userUpdateQuery,
   userDeleteQuery,
@@ -21,7 +21,7 @@ exports.userById = async (req, res) => {
 
 exports.usersAll = async (req, res) => {
   try {
-    const result = await allUser();
+    const result = await getUserQuery();
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send(err.message);

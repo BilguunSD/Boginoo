@@ -83,3 +83,15 @@
   color: #02b589;
   border: #000000 solid 0.7px;
 }
+
+.usertext {
+  width: 135px;
+  height: 18px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  margin-left: 24px;
+}

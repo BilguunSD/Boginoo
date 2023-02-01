@@ -2,17 +2,21 @@ import "../css/signup.css";
 import logo from "../assets/logofr2.png";
 import { Footer } from "../components/footer";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignUp = () => {
+  const [username, setUsername] = useState("");
   const [emailValue, setEmail] = useState("");
   const [passwordValue, setPassword] = useState("");
-  const [repeatedpassword, setRepeatPassword] = useState("");
+  const [repeatpass, setRepeatPass] = useState("");
+  const navigate = useNavigate();
 
   const fetchUser = async () => {
     try {
-      if (repeatedpassword === passwordValue) {
-        await axios.post(`http://localhost:8000/user`, {
+      if (repeatpass === passwordValue) {
+        await axios.post(`http://localhost:7000/user`, {
+          username: username,
           email: emailValue,
           password: passwordValue,
         });
@@ -37,6 +41,16 @@ const SignUp = () => {
       <div className="signupbody">
         <img src={logo} className="signuplogo" alt=""></img>
         <div className="signtitle">Бүртгүүлэх</div>
+        <div className="usersection">
+          <div className="usertext">Хэрэглэгчийн нэр</div>
+          <input
+            placeholder="username"
+            className="inputbox"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.currentTarget.value)}
+          ></input>
+        </div>
         <div className="emailsection">
           <div className="emailtext">Цахим хаяг</div>
           <input
@@ -63,8 +77,8 @@ const SignUp = () => {
             placeholder="••••••••••"
             className="inputbox"
             type="password"
-            value={repeatedpassword}
-            onChange={(e) => setRepeatPassword(e.currentTarget.value)}
+            value={repeatpass}
+            onChange={(e) => setRepeatPass(e.currentTarget.value)}
           ></input>
         </div>
         <button className="registerbutton cursor" onClick={fetchUser}>

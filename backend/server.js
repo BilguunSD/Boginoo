@@ -5,11 +5,9 @@ const { connectDatabase } = require("./database/database");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
-const PORT = process.env.PORT || 3000;
+const port = 7000;
 const app = express();
 dotenv.config();
-
-console.log(ErrorSs);
 
 app.use(cors());
 app.use(express.json());
@@ -18,8 +16,8 @@ app.use(UrlRouter);
 
 const startServer = async () => {
   await connectDatabase();
-  app.listen(PORT, () => {
-    console.log(`server is running at localhost:${PORT}`);
+  app.listen(port, () => {
+    console.log(`server is running at localhost:${port}`);
   });
 };
 

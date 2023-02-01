@@ -1,8 +1,9 @@
 const UserSchema = require("../database/model/user");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const salt = bcrypt.genSaltSync(1);
 
-exports.allUser = async () => {
+exports.getUserQuery = async () => {
   const result = await UserSchema.find();
   return result;
 };
@@ -19,22 +20,12 @@ exports.userReadByEmail = async (req) => {
 };
 
 exports.userCreateQuery = async (req) => {
-  let { password, email } = req.body;
-  const bcrypt = require("bcrypt");
-  const saltRounds = 10;
-  const Salty = await bcrypt
-    .genSalt(saltRounds)
-    .then((salt) => {
-      return bcrypt.hash(password, salt);
-    })
-    .then((hash) => {
-      return hash;
-    })
-    .catch((err) => console.error(err.message));
-
-  const result = await new UserSchema({
-    password: Salty,
+  const { username, email, password } = req.body;
+  const hash = bcrypt.hashSync(password, salt);
+  await new UserSchema({
+    username: username,
     email: email,
+    password: hash,
   }).save();
   return result;
 };
