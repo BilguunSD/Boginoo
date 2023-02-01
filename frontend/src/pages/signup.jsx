@@ -15,7 +15,7 @@ const SignUp = () => {
   const fetchUser = async () => {
     try {
       if (repeatpass === passwordValue) {
-        await axios.post(`http://localhost:7000/user`, {
+        await axios.post(`http://localhost:8000/user`, {
           username: username,
           email: emailValue,
           password: passwordValue,

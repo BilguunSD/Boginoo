@@ -1,21 +1,21 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 exports.TokenGenerator = async ({ result, expires }) => {
-  const payload = { result: result };
-  const token = await jwt.sign(payload, process.env.JWT || "Default", {
-    expiresIn: expires,
-  });
-  return token;
+    const payload = { result: result };
+    const token = await jwt.sign(payload, process.env.JWT || 'Default', {
+        expiresIn: expires,
+    });
+    return token;
 };
 
 exports.TokenChecker = async ({ token, secret }) => {
-  const result = await jwt.verify(token, secret, (err, decoded) => {
-    if (err && err.message === "jwt expired") {
-      return "Expired Token";
-    } else if (err) {
-      return "Invalid Token";
-    }
-    return decoded;
-  });
-  return result;
+    const result = await jwt.verify(token, secret, (err, decoded) => {
+        if (err && err.message === 'jwt expired') {
+            return 'Expired Token';
+        } else if (err) {
+            return 'Invalid Token';
+        }
+        return decoded;
+    });
+    return result;
 };
