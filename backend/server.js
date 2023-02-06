@@ -3,8 +3,7 @@ const UserRouter = require('./routers/userRouter');
 const UrlRouter = require('./routers/urlRouter');
 const { connectDatabase } = require('./database/database');
 const cors = require('cors');
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv').config();
 
 const port = process.env.PORT || 5000;
 const app = express();
